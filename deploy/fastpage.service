@@ -1,0 +1,21 @@
+# Example systemd service for Node.js on VPS
+# Adjust User, WorkingDirectory and EnvironmentFile paths for your deployment.
+[Unit]
+Description=FastPage Node server
+After=network.target
+[Service]
+User=fastpage
+WorkingDirectory=/opt/fastpage
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=BASE_DOMAIN=fastpage.my
+EnvironmentFile=-/opt/fastpage/.env
+ExecStart=/usr/bin/node src/server.js
+Restart=always
+RestartSec=4
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/fastpage
+[Install]
+WantedBy=multi-user.target

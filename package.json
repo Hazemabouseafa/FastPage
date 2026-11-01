@@ -1,0 +1,13 @@
+{
+  "name": "fastpage-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FastPage: one app, manually managed client landing pages via wildcard subdomains",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "engines": {"node": ">=20"}
+}
